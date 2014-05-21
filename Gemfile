@@ -1,13 +1,21 @@
 source 'https://rubygems.org'
 
+# ruby version
+ruby '2.1.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.1'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+
+# Use Twitter bootstrap
+gem 'bootstrap-sass'
+gem 'therubyracer'
+gem 'less-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,3 +51,38 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Haml for views
+gem 'haml-rails'
+gem 'erb2haml'
+
+# Use i18n
+gem 'rails-i18n'
+gem 'i18n_generators'
+
+# Use the plugin which hide records of deleting them, being to recover them.
+gem 'paranoia'
+
+# Use for environment variable
+gem 'dotenv-rails'
+
+# Use OmniAuth for authenticate
+gem 'twitter'
+gem 'omniauth-twitter'
+
+group :development, :test do
+  gem 'capybara'
+  gem 'capybara-webkit'
+
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'growl'
+  gem 'spork'
+
+  gem 'webrat'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end

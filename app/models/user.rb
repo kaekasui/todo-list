@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_paranoid
   has_many :tasks
 
   # omniauthで接続したユーザー情報を作成する

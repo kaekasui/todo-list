@@ -6,3 +6,8 @@ ja:
         due_at: "締切り日"
       user:
         mail: "メールアドレス"
+    errors:
+      template:
+        header:
+          one: "1個のエラーが発生しました。"
+          other: "%{count}個のエラーが発生しました。"

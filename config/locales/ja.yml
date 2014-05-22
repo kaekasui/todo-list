@@ -1,7 +1,6 @@
 ja:
-  time:
+  date:
     formats:
-      default: '%Y-%m-%d %H-%mi-%s'
       day: '%m/%d'
   title: "To Do リスト"
   user: "ユーザー情報"

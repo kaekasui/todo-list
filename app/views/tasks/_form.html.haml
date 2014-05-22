@@ -13,7 +13,7 @@
   .form-group
     = f.label :due_at, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.datetime_select :due_at
+      = f.date_select :due_at
       %p= t("messages.reminder")
   .form-actions
     = f.submit class: 'btn btn-default'

@@ -10,6 +10,8 @@ ja:
     edit: "編集"
     destroy: "削除"
     new: "新規作成"
+    login : "ログイン"
+    logout: "ログアウト"
   messages:
     reminder: "※前日8時にメール通知します。"
     mail_subject: "明日までのタスクがあります。"

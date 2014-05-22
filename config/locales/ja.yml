@@ -12,3 +12,4 @@ ja:
     new: "新規作成"
   messages:
     reminder: "※前日8時にメール通知します。"
+    mail_subject: "明日までのタスクがあります。"

@@ -15,6 +15,14 @@
   %body
     .container
       .row
+        .col-md-12
+          - if current_user
+            %span.glyphicon.glyphicon-user
+            = current_user.name
+            = link_to t("actions.logout"), logout_path
+          - else
+            = link_to t("actions.login"), "/auth/twitter"
+      .row
         =# bootstrap_flash
         .col-md-6
           = yield

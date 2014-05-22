@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
+  before_action :login_required
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  respond_to :html
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
   end
 
   def new
@@ -14,44 +16,30 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user_id = current_user.id
+    @task.save
 
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
-    end
+    respond_with @task, location: tasks_path
   end
 
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
-    end
+    @task.update(task_params)
+    respond_with @task, location: tasks_path
   end
 
-  # DELETE /tasks/1
-  # DELETE /tasks/1.json
   def destroy
     @task.destroy
     respond_to do |format|
       format.html { redirect_to tasks_url }
-      format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :created_by, :due_at)
+      params.require(:task).permit(:name, :user_id, :due_at)
     end
 end

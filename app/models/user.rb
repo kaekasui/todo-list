@@ -4,9 +4,7 @@ class User < ActiveRecord::Base
 
   # omniauthで接続したユーザー情報を作成する
   def self.create_with_omniauth(auth)
-    @user_provider = { provider: auth["provider"], uid: auth["uid"] }
-    # twitter
-    @user_provider.merge({ name: auth["info"]["name"], screen_name: auth["info"]["nickname"] })
+    @user_provider = { provider: auth["provider"], uid: auth["uid"], name: auth["info"]["name"], screen_name: auth["info"]["nickname"] }
     User.create(@user_provider)
   end
 

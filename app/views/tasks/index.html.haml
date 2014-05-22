@@ -5,7 +5,7 @@
 %ul.list-group
   - @tasks.each do |task|
     %li.list-group-item
-      = task.name
       %span.label.label-info= l(task.due_at, format: :day)
+      = task.name
       .right= link_to t("actions.destroy"), task, method: :delete, data: { confirm: 'Are you sure?' }
       .right= link_to t("actions.edit"), edit_task_path(task)

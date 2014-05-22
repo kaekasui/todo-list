@@ -1,7 +1,4 @@
-%h1 Editing task
+%h3= I18n.t("title") + " - " + t("actions.edit")
 
 = render 'form'
-
-= link_to 'Show', @task
-\|
-= link_to 'Back', tasks_path
+= link_to t("actions.back"), tasks_path

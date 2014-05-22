@@ -1,0 +1,11 @@
+ja:
+  time:
+    formats:
+      default: '%Y-%m-%d %H-%mi-%s'
+      day: '%m/%d'
+  title: "To Do リスト"
+  actions:
+    back: "戻る"
+    edit: "編集"
+    destroy: "削除"
+    new: "新規作成"

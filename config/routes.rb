@@ -1,4 +1,4 @@
 Todo::Application.routes.draw do
   root 'tasks#index'
-  resources :tasks
+  resources :tasks, except: [:show]
 end

@@ -4,3 +4,5 @@ ja:
       task:
         name: "タスク名"
         due_at: "締切り日"
+      user:
+        mail: "メールアドレス"

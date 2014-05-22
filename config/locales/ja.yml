@@ -4,6 +4,7 @@ ja:
       default: '%Y-%m-%d %H-%mi-%s'
       day: '%m/%d'
   title: "To Do リスト"
+  user: "ユーザー情報"
   actions:
     back: "戻る"
     edit: "編集"
